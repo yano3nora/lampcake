@@ -1,0 +1,24 @@
+{
+  "folders":
+  [
+    {
+      "path": "."
+    }
+  ],
+  "settings":
+  {
+    "default_line_ending": "unix",
+    "tab_size": 2,
+    "translate_tabs_to_spaces": true,
+    "xdebug": {
+      "ide_key": "vagrant",
+      "port": 9000,
+      "url": "http://192.168.33.10",
+      "path_mapping": {
+        "/var/www" : "path/to/your/project",
+       },
+       "super_globals": true,
+       "close_on_stop": true
+    }
+  }
+}
