@@ -110,6 +110,7 @@ Vagrant.configure("2") do |config|
     sudo chkconfig httpd on
     # disabled SELinux
     sudo setenforce 0
+    sudo sed -e 's/SELINUX=enforcing/SELINUX=disabled/' /etc/selinux/config
     sudo sed -e 's/SELINUX=permissive/SELINUX=disabled/' /etc/selinux/config
     # Install mysql / phpMyAdmin and delete mariadb-lib.
     sudo yum -y remove mariadb-libs
