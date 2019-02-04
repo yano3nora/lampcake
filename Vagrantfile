@@ -31,7 +31,7 @@ Vagrant.configure("2") do |config|
     # Setup server local time.
     sudo rm /etc/localtime
     sudo ln -s /usr/share/zoneinfo/Asia/Tokyo /etc/localtime
-    # Install utilities - crond / telnet / vim / postfix / mlocate / zip / unzip / expect / vsftpd / ntpd.
+    # Install utilities - crond / telnet / vim / postfix / mlocate / zip / unzip / expect / ntpd.
     sudo yum -y install --enablerepo=remi,epel,rpmforge install crontabs
     sudo chkconfig crond on
     sudo service crond start
@@ -48,9 +48,6 @@ Vagrant.configure("2") do |config|
     sudo yum install -y unzip
     sudo yum install -y expect
     sudo yum install -y zip
-    sudo yum -y install vsftpd
-    sudo chkconfig vsftpd on
-    sudo service vsftpd start
     # Install git
     cd /usr/local/src
     sudo yum -y install git curl-devel expat-devel gettext-devel openssl-devel zlib-devel gcc perl-ExtUtils-MakeMaker
@@ -75,7 +72,7 @@ Vagrant.configure("2") do |config|
     sudo yum --enablerepo=remi,epel,rpmforge -y install ImageMagick ImageMagick-late ImageMagick-devel
     sudo yum --enablerepo=remi,epel,rpmforge -y install graphviz graphviz-graphs graphviz-gd graphviz-devel
     sudo yum --enablerepo=remi,epel,rpmforge,remi-php71 -y install php php-devel php-mbstring php-mcrypt php-mysqlnd php-intl
-    sudo yum --enablerepo=remi,epel,rpmforge,remi-php71 -y install php-pecl-imagick php-pecl-xdebug php-gd 
+    sudo yum --enablerepo=remi,epel,rpmforge,remi-php71 -y install php-pecl-imagick php-pecl-xdebug php-gd
     # Edit php.ini / xdebug.
     sudo sed -i -e "s|;error_log = syslog|error_log = /var/log/php.log|" /etc/php.ini
     sudo sed -i -e "s|;mbstring.language = Japanese|mbstring.language = Japanese|" /etc/php.ini
