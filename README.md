@@ -27,9 +27,3 @@ $ vagrant reload
 # ssh to vm
 $ vagrant ssh
 ```
-
-### Setup sublime-project.
-```
-$ cd {PROJECT_NAME}
-$ cp *.sublime-project--example *.sublime-project
-```
